@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: "Poppins", sans-serif; }
+
+.content {
+  height: 90vh;
+  display: grid; place-items: center;
+}
+
+nav{
+  position: absolute;
+  left: 1180px;
+  top: 200px;
+}
+
+footer {
+  padding: 50px 25px;
+  background-color: rgb(126, 38, 38);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                    url("bg-pattern.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: flex; position: absolute;
+  top: 700px;
+  left: 20px;
+  color: rgb(107, 30, 30);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap");
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  display: flex; justify-content: center; align-items: center;
+  background-color: #000;
+}
+.col-left p { margin: 15px 0 30px; }
+
+.social-media-list { display: flex; }
+
+.social-media-list li {
+  width: 50px; height: 50px;
+  display: grid; place-items: center;
+  transition: all 0.3s;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.social-media-list li:not(:last-child) {
+  margin-right: 15px;
+}
+
+.social-media-list li:hover { background-color: #111; filter: drop-shadow(0 10px 20px rgb(5, 169, 240));}
+
+.social-media-list a {
+    text-decoration: none;
+    color: #111;
+    font-size: 20px;
+}
+
+.social-media-list li:hover a { color: #fff; }
+
+.col-right {
+  flex: 1;
+  display: flex; justify-content: space-between;
+}
+
+.links-container { list-style: none; }
+
+.links-container:not(:last-child) {
+    margin-right: 25px;
+}
+
+.links-container h4 {
+  color: #6fa6ab;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.links-container li { margin-top: 20px; }
+
+.links-container a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.links-container li:hover a { color: #6fa6ab; }
+
+@media (max-width: 1024px) {
+    .col-left p,
+    .links-container a {
+      font-size: 15px;
+    }
+  
+    .col-left p br { display: none; }
+  }
+  
+  @media (max-width: 768px) {
+    footer .container {
+      flex-direction: column;
+    }
+  
+    .col-left {
+      text-align: center;
+      margin-right: 0;
+    }
+  
+    .social-media-list {
+      margin: 0 auto;
+      justify-content: center;
+    }
+  
+    .col-right {
+      width: 100%;
+      margin: 50px 0 0;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .col-right { flex-direction: column; }
+  
+    .links-container:not(:last-child) {
+      margin: 0 0 50px 0;
+    }
+  }
+  
+  @media (max-width: 352px) {
+    .social-media-list li {
+      width: 40px; height: 40px;
+    }
+  }
+
+.slider {
+  width: 80%; height: 550px;
+  max-width: 900px;
+  background-color: rgb(136, 179, 192);
+  border-radius: 50px;
+  position: relative;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background-color: rgb(219, 147, 65);
+  color: rgb(54, 114, 122);
+  border: none; outline: none;
+  font-size: 20px;
+  display: flex; justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+  opacity: 0.8;
+}
+
+.prev { left: -10%; }
+.next { right: -7%; }
+
+.slides-container { width: 100%; height: 100%; }
+
+.slide {
+    width: 100%; height: 100%;
+    align-items: center;
+    padding: 25px 50px;
+    display: none;
+  }
+  
+  .slide.active { display: flex; }
+  
+  .slide.active .col-left,
+  .slide.active .col-right {
+    animation: fade-in 0.8s 1;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0; transform: translateX(-20px);
+    }
+  
+    to {
+      opacity: 1; transform: translateX(0);
+    }
+  }
+  
+  .col-left,
+  .col-right { flex: 1; }
+  
+  .col-left h2 {
+    font-family: "Bebas Neue", cursive; font-size: 50px;
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+    letter-spacing: 3px;
+  }
+  
+  .col-left p {
+    font-family: "Poppins", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.9;
+  }
+  .col-left p2 {
+    font-family: "Times New Roman", sans-serif;
+    color: rgb(10, 26, 39);
+    line-height: 1.9;
+  }
+  
+  .col-right {
+    text-align: center;
+    height: 100%;
+  }
+  
+  .col-right img {
+    height: 100%;
+    filter: drop-shadow(0 10px 20px rgb(5, 169, 240));
+  }
+
+.col-left {
+  flex: 1;
+  margin-right: 25px;
+}
+
